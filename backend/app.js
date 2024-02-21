@@ -15,14 +15,6 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/phones", (req, res) => {
-  try {
-    res.json(phonesData);
-  } catch (error) {
-    res.status(500).json({ error: "Server error with the phone data" });
-  }
-});
-
 app.get("/phones/:id", async (req, res) => {
   try {
     const phoneDataId = req.params.id;
